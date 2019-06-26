@@ -57,9 +57,11 @@ body {
 .min-hand {
   background: rgba(41, 95, 101, 0.81);
   height: 5px;
+  border: solid 2px white;
 }
 
 .hour-hand {
   background: rgba(34, 66, 109, 0.81);
   height: 6px;
+  border: solid 2px white;
 }
