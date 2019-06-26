@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
-  <title>Flex Panels 💪</title>
+  <title>Flex Panels</title>
 </head>
 <body>
 
@@ -48,11 +48,8 @@
     }
   }
 
-panels.forEach(panel => panel.addEventListener('click', toggleOpen));
-panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
-  </script>
-
-
-
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+</script>
 </body>
 </html>
