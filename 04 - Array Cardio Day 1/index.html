@@ -80,20 +80,34 @@
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-    // RUN CODE IN CONSOLE ON ABOVE PAGE ^-^
-    const category = document.querySelector('.mw-category');
-    const links = [...category.querySelectorAll('a')]; // Array.from(category.querySelectorAll('a')); - does the same thing, potentially more readable
-    const de = links
-                  .map(link => link.textContent)
-                .filter(streetName => streetName.includes('de'));
-
+    // RUN  BELOW CODE IN CONSOLE ON ABOVE PAGE ^-^
+    // const category = document.querySelector('.mw-category');
+    // const links = [...category.querySelectorAll('a')]; // Array.from(category.querySelectorAll('a')); - does the same thing, potentially more readable
+    // const de = links
+    //               .map(link => link.textContent)
+    //             .filter(streetName => streetName.includes('de'));
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-
+    const surname = people.sort((lastOne, nextOne) => {
+      const [last1, first1] = lastOne.split(', ');
+      const [last2, first2] = nextOne.split(', ');
+      return last1 > last2 ? 1 : -1; 
+    });
+    console.table(surname);
     // 8. Reduce Exercise
     // Sum up the instances of each of these
-    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'scooter', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck', 'lift', 'walk', 'scooter' ];
+
+    const transport = data.reduce((obj, item) => {
+      if(!obj[item]) {
+        obj[item] =0;
+      }
+      obj[item]++;
+      return obj;
+    }, {
+    });
+    console.log(transport);
 
   </script>
 </body>
